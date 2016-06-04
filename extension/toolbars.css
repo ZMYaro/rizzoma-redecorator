@@ -1,19 +1,57 @@
-/* blip border styling */
-
-.blips-container {
-	box-shadow: 0px 4px 8px -2px rgba(0,0,0,0.3) !important;
+/* Remove shadows */
+.navigation-container {
+	box-shadow: none !important;
+}
+.wave-container {
+	/*box-shadow: -1px 0 2px 0 rgba(0,0,0,0.25) !important;*/
+	box-shadow: -1px 0 0 0 rgba(0,0,0,0.1) !important;
 }
 
-.blip-container {
+/* Wave panel header */
+.wave-header {
+	/*background-color: #E3EAF0 !important;*/
+	background-color: #D9DEE2 !important;
+}
+.wave-header-section .wave-header-button {
+	border-color: transparent !important;
+}
+
+/* thread styling */
+.wave-blips > .blip-container {
+	margin: 0 -1px !important;
+}
+
+.blips-container {
+	box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.3) !important;
+}
+.container-blip-editor > * > .blip-thread > .blips-container,
+.root-thread > .blips-container {
+	box-shadow: none !important;
+}
+
+
+/* blip styling */
+.blip-container, .bottom-blip-menu {
 	border-style: solid !important;
 	border-width: 1px !important;
 }
-.blip-container:not(.active) {
-	border-color: transparent rgba(0,0,0,0.1) #D6D6D6 !important;
-}
-.blip-container:not(:last-child) {
+.blip-container:not(.active), .blip-container.root-blip:not(.active) {
+	border-color: transparent transparent #D6D6D6 !important;
 	border-bottom-style: dotted !important;
 }
+.blip-container:first-child:not(.active):not(.root-blip) {
+	border-top: 1px dotted #D6D6D6 !important;
+}
+.blip-container:last-child:not(.active) {
+	border-bottom-color: transparent !important;
+}
+.wave-blips > .blip-container {
+	border-color: transparent !important;
+}
+.root-blip:only-child, .root-blip ~ :last-child {
+	border-bottom: none !important;
+}
+
 .blip-container:first-child {
 	border-top-left-radius: 0 !important;
 	border-top-right-radius: 0 !important;
@@ -22,7 +60,8 @@
 .blip-container.active {
 	border-style: solid !important;
 }
-.blip-container:not(.edit-mode).active {
+.blip-container:not(.edit-mode).active,
+.blip-container:not(.edit-mode).active .bottom-blip-menu {
 	border-color: hsl(208, 14%, 57%) !important;
 	/*box-shadow: inset 0 0 0 2px hsla(208, 14%, 57%, 0.5) !important;*/
 }
@@ -33,91 +72,79 @@
 	/*border-top-width: 2px !important;*/
 	margin-top: -1px !important;
 	padding-top: 13px !important;
+	margin-bottom: -1px important;
 }
 
 /* blip menu positioning */
 .blip-menu-container:not(.fixed),
-.root-blip ~ .blip-container > .blip-menu-container:not(.fixed),
-.bottom-blip-menu,
-.root-thread > .blips-container > .blip-container > .bottom-blip-menu {
+.root-blip ~ .blip-container > .blip-menu-container:not(.fixed) {
 	left: -1px !important;
 }
 .blip-menu-container:not(.fixed),
 .root-blip ~ .blip-container > .blip-menu-container:not(.fixed) {
 	top: -16px !important;
 }
-.bottom-blip-menu,
+/*.bottom-blip-menu,
 .root-thread > .blips-container > .blip-container > .bottom-blip-menu {
 	bottom: -14px !important;
-}
+}*/
 
 /* blip menu coloring */
 .blip-container:not(.edit-mode) > .blip-menu-container .blip-menu button,
-.blip-container:not(.edit-mode) > .bottom-blip-menu button,
 .wave-panel:not(.edit-mode) > span > .blip-menu,
-.wave-panel:not(.edit-mode) > .blip-menu button,
-.wave-panel:not(.edit-mode) > .bottom-blip-menu button {
+.wave-panel:not(.edit-mode) > .blip-menu button {
 	background: -webkit-linear-gradient(hsl(209, 15%, 60%), hsl(207, 13%, 55%)) !important;
 	background:         linear-gradient(hsl(209, 15%, 60%), hsl(207, 13%, 55%)) !important;
+	
+	color: white !important;
 }
 .blip-container:not(.edit-mode) > .blip-menu-container .blip-menu button:hover,
-.blip-container:not(.edit-mode) > .bottom-blip-menu button:hover,
-.wave-panel:not(.edit-mode) .blip-menu button:hover,
-.wave-panel:not(.edit-mode) > .bottom-blip-menu button:hover {
+.wave-panel:not(.edit-mode) .blip-menu button:hover {
 	background: -webkit-linear-gradient(hsl(207, 13%, 55%), hsl(203, 9%, 45%)) !important;
 	background:         linear-gradient(hsl(207, 13%, 55%), hsl(203, 9%, 45%)) !important;
 }
 .blip-container:not(.edit-mode) > .blip-menu-container .blip-menu button:active,
-.blip-container:not(.edit-mode) > .bottom-blip-menu button:active,
-.wave-panel:not(.edit-mode) .blip-menu button:active,
-.wave-panel:not(.edit-mode) > .bottom-blip-menu button:active {
+.wave-panel:not(.edit-mode) .blip-menu button:active {
 	background: -webkit-linear-gradient(hsl(203, 9%, 45%), hsl(201, 7%, 40%)) !important;
 	background:         linear-gradient(hsl(203, 9%, 45%), hsl(201, 7%, 40%)) !important;
 }
 
-.blip-menu button,
-.bottom-blip-menu button {
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .other-blipmenu-container .list-menu-button > button,
+.wave-panel:not(.edit-mode) .blip-menu .other-blipmenu-container .list-menu-button > button {
+	display: block !important;
+	width: 100%;
+	
+	background: transparent none !important;
+	color: black !important;
+}
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .other-blipmenu-container .list-menu-button:hover > button,
+.wave-panel:not(.edit-mode) .blip-menu .other-blipmenu-container .list-menu-button:hover > button {
+	background-color: hsl(205, 11%, 50%) !important;
 	color: white !important;
 }
 
-.blip-menu button .icon,
-.bottom-blip-menu button .icon {
+
+/* TODO: Remove the need for this specific selector */
+.to-edit {
+	color: white !important;
+}
+
+.blip-menu button .icon {
 	background-position-y: -30px !important;
 }
 
-/* -------- Reply/Comment Button -------- */
-.bottom-blip-menu .blip-reply-button {
-	position: relative !important;
-	width: 80px !important;
-	color: transparent !important;
+/* “Hide” button */
+.blip-menu .is-folded-by-default::before {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAA5CAYAAADp9XH6AAABWElEQVRIx+2VMWrDMBiFn4KFYkyWjO1dOnXpBdpj5AKh0NC5JUtphkLm3CsePaQI8RBFXSwwRpLlpiTQRqDBoE/6rf89PeCIIQBAa+3GglVViaLzfT2C3QNA0dutziG11gCAyTH/fIH/B9xV2N4r5yTjfK7yLnFa66shguSqW2n2bZN8BXAfa1VBcpoAH6J9FkKUALYkZQLcpURyA+DDb9ADN0qpx5hI/LgF8E7y0AOfomU75z4BvLSfdx3wLQQGW0VyQbJu5zK2Pli2UmpNEgBmSqnnnKc0SySpk8/gqkbb0a6aV/IXs2peyaysarS9vNsX+AdZ5ZXzx13lXeIabQefIUO76laafduGNp5VAigM7TQBxrNqIlAC2BpamQCHs8pv0AM3pZJ5WWVoDz0wnlVfDtGsCoHBVhnahaGt27mMrQ+WXSq5NrQAMCuVHM6qXJGkTj6tq74B7rjmkgB0fyEAAAAASUVORK5CYII=) !important;
 }
-span.edit-mode .bottom-blip-menu .blip-reply-button {
-	background: #4EA0F1 !important;
+
+/* -------- Reply region -------- */
+.bottom-blip-menu {
+	left: -1px !important;
+	right: -1px !important;
 }
-span.edit-mode .bottom-blip-menu .blip-reply-button:hover {
-	background: -webkit-linear-gradient(#4EA0F1, #3189C9) !important;
-	background:         linear-gradient(#4EA0F1, #3189C9) !important;
-}
-span.edit-mode .bottom-blip-menu .blip-reply-button:active {
-	background: #3089C8 !important;
-}
-.bottom-blip-menu .blip-reply-button::before {
-	content: "";
-	position: absolute;
-	left: 12px;
-	top: 8px;
-	width: 24px;
-	height: 24px;
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAOCAYAAAD0f5bSAAAAAXNSR0IArs4c6QAAAH9JREFUKM+d0b0NgmAUheEjtCbMYOUAtIzhQAziPLa0OAGtA5A8NsbE5EN+TnvPW5z3Bi0G2zKgzQ7gCwZz4dAnCfrCba6S1NmXusqBHIJS2lLo/GzLkoQlYAlas+eEMcl1x6Jn0GHa+NgJ3T8pd5zXLDaf8gu3reobPHBZ674BIrBqa/dXab0AAAAASUVORK5CYII=);
-	background-repeat: no-repeat;
-}
-.bottom-blip-menu .blip-reply-button::after {
-	content: "Reply";
-	color: white;
-	
-	position: relative;
-	left: -21px;
-	top: 0;
+.root-thread > .blips-container > .blip-container.edit-mode > .bottom-blip-menu {
+	border: 1px solid #4EA0F1 !important;
 }
 
 /* Inline Comment Button */
