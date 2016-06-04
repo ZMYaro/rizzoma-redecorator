@@ -1,0 +1,187 @@
+.blip-container:not(.edit-mode).active {
+	border-color: hsl(208, 14%, 57%) !important;
+}
+.blip-container:not(:first-child).blip-container:not(.edit-mode).active {
+	border-top-width: 2px;
+	margin-top: -2px;
+}
+
+.blip-container:not(.edit-mode) .blip-menu,
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu button,
+.blip-container:not(.edit-mode) > .bottom-blip-menu button,
+.wave-panel:not(.edit-mode) .blip-menu button,
+.wave-panel:not(.edit-mode) > .bottom-blip-menu button {
+	background: -webkit-linear-gradient(hsl(209, 15%, 60%), hsl(207, 13%, 55%)) !important;
+	background:         linear-gradient(hsl(209, 15%, 60%), hsl(207, 13%, 55%)) !important;
+}
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu button:hover,
+.blip-container:not(.edit-mode) .bottom-blip-menu button:hover,
+.wave-panel:not(.edit-mode) .blip-menu button:hover,
+.wave-panel:not(.edit-mode) > .bottom-blip-menu button:hover {
+	background: -webkit-linear-gradient(hsl(207, 13%, 55%), hsl(203, 9%, 45%)) !important;
+	background:         linear-gradient(hsl(207, 13%, 55%), hsl(203, 9%, 45%)) !important;
+}
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu button:active,
+.blip-container:not(.edit-mode) .bottom-blip-menu button:active,
+.wave-panel:not(.edit-mode) .blip-menu button:active,
+.wave-panel:not(.edit-mode) > .bottom-blip-menu button:active {
+	background: -webkit-linear-gradient(hsl(203, 9%, 45%), hsl(201, 7%, 40%)) !important;
+	background:         linear-gradient(hsl(203, 9%, 45%), hsl(201, 7%, 40%)) !important;
+}
+
+.bottom-blip-menu .blip-reply-button,
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu button,
+.wave-panel:not(.edit-mode) .blip-menu button {
+	position: relative !important;
+}
+.bottom-blip-menu .blip-reply-button::before,
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .hide-all-inlines::before,
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .show-all-inlines::before,
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .copy-blip-button::before,
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .paste-as-reply::before,
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .paste-at-cursor::before,
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .delete-blip::before,
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .gearwheel::before,
+.wave-panel:not(.edit-mode) .blip-menu .hide-all-inlines::before,
+.wave-panel:not(.edit-mode) .blip-menu .show-all-inlines::before,
+.wave-panel:not(.edit-mode) .blip-menu .copy-blip-button::before,
+.wave-panel:not(.edit-mode) .blip-menu .paste-as-reply::before,
+.wave-panel:not(.edit-mode) .blip-menu .paste-at-cursor::before,
+.wave-panel:not(.edit-mode) .blip-menu .delete-blip::before,
+.wave-panel:not(.edit-mode) .blip-menu .gearwheel::before {
+	content: "";
+	position: absolute;
+	width: 24px;
+	height: 24px;
+}
+
+/* -------- Edit Button -------- */
+.blip-container:not(.edit-mode) .blip-menu .to-edit::after,
+.blip-container:not(.edit-mode) > .bottom-blip-menu .to-edit::after,
+.wave-panel:not(.edit-mode) .blip-menu .to-edit::after,
+.wave-panel:not(.edit-mode) > .bottom-blip-menu .to-edit::after {
+	content: "Edit";
+	color: white;
+	
+	position: relative;
+	left: -1px;
+	top: -1px;
+}
+
+/* -------- Reply/Comment Button -------- */
+.bottom-blip-menu .blip-reply-button {
+	width: 80px !important;
+}
+span.edit-mode .bottom-blip-menu .blip-reply-button {
+	background: #4EA0F1 !important;
+}
+span.edit-mode .bottom-blip-menu .blip-reply-button:hover {
+	background: -webkit-linear-gradient(#4EA0F1, #3189C9) !important;
+	background:         linear-gradient(#4EA0F1, #3189C9) !important;
+}
+span.edit-mode .bottom-blip-menu .blip-reply-button:active {
+	background: #3089C8 !important;
+}
+.bottom-blip-menu .blip-reply-button::before {
+	left: 12px;
+	top: 8px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAOCAYAAAD0f5bSAAAAAXNSR0IArs4c6QAAAH9JREFUKM+d0b0NgmAUheEjtCbMYOUAtIzhQAziPLa0OAGtA5A8NsbE5EN+TnvPW5z3Bi0G2zKgzQ7gCwZz4dAnCfrCba6S1NmXusqBHIJS2lLo/GzLkoQlYAlas+eEMcl1x6Jn0GHa+NgJ3T8pd5zXLDaf8gu3reobPHBZ674BIrBqa/dXab0AAAAASUVORK5CYII=);
+	background-repeat: no-repeat;
+}
+.bottom-blip-menu .blip-reply-button::after {
+	content: "Reply";
+	color: white;
+	
+	position: relative;
+	left: 10px;
+	top: -1px;
+}
+
+/* -------- Show/Hide Sub-Threads -------- */
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .hide-all-inlines::before,
+.wave-panel:not(.edit-mode) .blip-menu .hide-all-inlines::before {
+	left: 6px;
+	top: 7px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQCAYAAADwMZRfAAAAAXNSR0IArs4c6QAAAJxJREFUOMu9ksEJAjEQRf8sFiFYw/YgorXYl5UsCHvai4fYguBJ8O7zMoKGcQ0J+I4zyctPJlIAsAOuzHMBNvoGkPQDF6XmBMCtOcGHpDZBLkmUkSJJ556VygjXdWrjLEmLvGpmFj1mUBsk7UNJtCFKYGbr6uu8J8gbU+F0xjl7Dwz+F148gJMfMHm/L4l6cMEd2FbNy088Akv9myfq61k8UVib4wAAAABJRU5ErkJggg==) !important;
+	background-repeat: no-repeat;
+}
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .show-all-inlines::before,
+.wave-panel:not(.edit-mode) .blip-menu .show-all-inlines::before {
+	left: 6px;
+	top: 7px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQCAYAAADwMZRfAAAAAXNSR0IArs4c6QAAAKVJREFUOMu9kkEKwjAQRf8UDyH0DL2DiJ7Fe3mSgtBVNy7iFQRXgnufmwloGWNJwbcKhHnzJxMpANgDN8pcga2+AST9wEVpcQLgvjjBh6Q2wVSSmEeKJI172mlsM7NgmjYasdEyLpK0KiXIZ4DggXtJh1CSC8zMouKcwMw21eO8J5hejDO3M5TsHdD7X8g8gbM3GP2+mxP16IIHsKval3c8AWv9mxcP911EuAh3PQAAAABJRU5ErkJggg==);
+	background-repeat: no-repeat;
+}
+
+/* -------- Copy Blip -------- */
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .copy-blip-button::before,
+.wave-panel:not(.edit-mode) .blip-menu .copy-blip-button::before {
+	left: 9px;
+	top: 7px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAKJJREFUOMutkjsOwjAQBedBGlCknJMCiYarcMBUKYlAFEjo0WAU8CcJYSpr117v2AuA7Z3ts8vcbB/5Qq8CF6BmnAewlXT/iA5uOdluShVsKxUM1HN1goIBJGmuziqRmHIYYA1sqlxWkgrv4LCupmwqaSzqQNJ1aQdvhR5ofnmD8At7oM3MRkQ0yhk/jSlJUmoO+lQHiX3dUGFIpJOgBQ78gydmP9GSv16QeAAAAABJRU5ErkJggg==);
+	background-repeat: no-repeat;
+}
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .copy-blip-button::after,
+.wave-panel:not(.edit-mode) .blip-menu .copy-blip-button::after {
+	content: "Copy";
+	color: white;
+	position: relative;
+	left: 10px;
+	top: -1px;
+}
+
+/* -------- Paste Blip -------- */
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .paste-as-reply::before,
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .paste-at-cursor::before,
+.wave-panel:not(.edit-mode) .blip-menu .paste-as-reply::before,
+.wave-panel:not(.edit-mode) .blip-menu .paste-at-cursor::before {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAJNJREFUOMu1kzsOwjAQRN9EFm0uSM9ZqDgEl+BCkSipAg0aGhewMYsjYCTL0q6987EsAmw71iSJf0GRtcWW9UuPhRS2N15iu2bAGG/X+tE5TgCyPQKXmHqPFUkqwP3ToTTUVnBrFfCNgtIRcqpkqPuUKYhoDdgB53cKWs/8EmIm/ZmxFfaQ2NsD18B8q2sGDj/5jQ+W4qividodWwAAAABJRU5ErkJggg==);
+	background-repeat: no-repeat;
+}
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .paste-as-reply::before,
+.wave-panel:not(.edit-mode) .blip-menu .paste-as-reply::before {
+	left: 8px;
+	top: 7px;
+}
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .paste-at-cursor::before,
+.wave-panel:not(.edit-mode) .blip-menu .paste-at-cursor::before {
+	left: 6px;
+	top: 7px;
+}
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .paste-as-reply::after,
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .paste-at-cursor::after,
+.wave-panel:not(.edit-mode) .blip-menu .paste-as-reply::after,
+.wave-panel:not(.edit-mode) .blip-menu .paste-at-cursor::after {
+	color: white;
+	position: relative;
+}
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .paste-as-reply::after,
+.wave-panel:not(.edit-mode) .blip-menu .paste-as-reply::after {
+	left: 11px;
+	top: -1px;
+	content: "as reply";
+}
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .paste-at-cursor::after,
+.wave-panel:not(.edit-mode) .blip-menu .paste-at-cursor::after {
+	left: 10px;
+	top: -1px;
+	content: "at cursor";
+}
+
+/* -------- Delete Blip -------- */
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .delete-blip::before,
+.wave-panel:not(.edit-mode) .blip-menu .delete-blip::before {
+	left: 9px;
+	top: 7px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAQCAYAAADNo/U5AAAAAXNSR0IArs4c6QAAAGZJREFUKM/tkTsKgEAMRGcWSy9qIdh4YStbEexkbJawxN+a2leFMJMvEIBXSUkyAXnSpCzqVOALZDZJo3WStAJoKybbSTYI7+RHejSQTD7xFtshvvKbnGnx/7qJ59LUVzSYAAyIcgD5/ztnwmuFYgAAAABJRU5ErkJggg==);
+	background-repeat: no-repeat;
+}
+
+/* -------- Gear Menu -------- */
+.blip-container:not(.edit-mode) > .blip-menu-container .blip-menu .gearwheel::before,
+.wave-panel:not(.edit-mode) .blip-menu .gearwheel::before {
+	left: 6px;
+	top: 5px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAWCAYAAADNX8xBAAAAAXNSR0IArs4c6QAAAW1JREFUOMvtlD1uwkAQhZ+jHIETUFlCgiLhAnAYTkSHRIFWLnDnkh8X9louXCEsI0rABT/VVuvqpfIKh0TGUZpIedXMaufbnZndAf6sfN+nUoqu61IpRc/z2BgihGCSJLyX7/ucz+fNYPcApVQFOJvNCADWfcBkMnlrtVrJ7XZ7B4DS7na7Sb/fx263w3q9xmAwgG3b2Gw26PV61sPJQRCQJLMsY5ZlJMkgCKi1JklqrblcLs2ttNYmtdfScByHSikAgG3bBl4UBYqiQJ7naLfbGA6HAIA8z3G9Xqs3WSwWrNPlciFJpmlKkozjuFLoFwA4HA6j0+lkFj3Pg+u6xldKIY5jCCHQ6XQsIQTSNB192ZnypLIT4/HY+Mfj8bk2R1FUSUNrbQpcKoqi52BSSkopH2qz3W4ppWz28BzHIUmez2fu93uSZBiG/NGfWq1WJjAMQ06n0wT/+hVZdePjIcCyrMagz7DvII0GW92eDzSSedwkjlw1AAAAAElFTkSuQmCC);
+	background-repeat: no-repeat;
+}
